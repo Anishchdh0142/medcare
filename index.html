@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Tools | MEDCARE</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-overlay"></div>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z"></path>
+                    <path d="M12 8v8M8 12h8"></path>
+                </svg>
+                MEDCARE
+            </div>
+            <nav class="nav-links">
+                <a href="#tools" class="active">Clinical Tools</a>
+                <a href="#">Platforms</a>
+                <a href="#">Collaboration</a>
+                <a href="#login-section" class="btn-signin">Sign In</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero text-center">
+            <h1>Your pharmacist, on demand.</h1>
+            <p class="subtitle">AI grounded in FDA guidelines answers routine questions. A licensed pharmacist reviews
+                complex cases.</p>
+            <p class="small-text mt-2">HIPAA-eligible storage · Pharmacist reply within 24 hours · FDA-verified sources
+            </p>
+
+            <div class="app-promo mt-4">
+                <p class="mb-2"><strong>Your pharmacist, now on your phone</strong></p>
+                <div class="flex-center" style="display:flex; justify-content:center; gap: 10px;">
+                    <button class="btn-primary">Apple App Store</button>
+                    <button class="btn-secondary">Google Play</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Aim Section -->
+        <section class="tool-card">
+            <h2>About MEDCARE</h2>
+            <p class="mb-3 text-main">MEDCARE is an advanced, corporative-clinical healthcare platform that bridges the
+                gap between patients, pharmacists, and doctors using cutting-edge AI and clinical data. It is designed
+                to provide authoritative and stable healthcare management for hospitals and diagnostic centers.</p>
+
+            <h3>Aim of MEDCARE</h3>
+            <p class="text-main">Our primary aim is to optimize treatment safety and prevent dangerous drug interactions
+                by delivering accessible, FDA-verified pharmacist expertise on demand. We strive to create a seamless
+                ecosystem that prioritizes patient health, lowers costs, and improves clinical efficiency.</p>
+        </section>
+
+        <!-- Login / Registration Section -->
+        <section id="login-section" class="tool-card mx-auto" style="max-width: 500px;">
+            <h2 class="text-center">© Welcome to MEDCARE</h2>
+            <p class="text-center mb-3" id="auth-subtitle">Sign in to your account</p>
+
+            <div class="flex-center mb-3" style="display:flex; justify-content:center;">
+                <button class="btn-text active-tab" id="tab-login" onclick="switchAuthTab('login')">Log In</button>
+                <span style="margin: 0 10px; color: var(--border);">|</span>
+                <button class="btn-text" id="tab-register" onclick="switchAuthTab('register')">Create Account</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="form-login">
+                <div class="divider">Log in with details</div>
+                <div class="form-group mt-3">
+                    <label>Name</label>
+                    <input type="text" class="form-input" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-input" placeholder="••••••••">
+                </div>
+                <p class="text-right mb-3"><a href="#" class="accent-link small-text">Forgot Password?</a></p>
+                <button class="btn-primary w-100 mb-3" onclick="alert('Logged in!')">Log In</button>
+            </div>
+
+            <!-- Registration Form (hidden by default) -->
+            <div id="form-register" style="display: none;">
+                <div class="divider">Register with details</div>
+                <div class="form-group mt-3">
+                    <label>Name of the Patient</label>
+                    <input type="text" class="form-input" placeholder="Full Name">
+                </div>
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" class="form-input" placeholder="Years">
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" class="form-input" placeholder="+1 (555) 000-0000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-input" placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-input" placeholder="••••••••">
+                </div>
+                <p class="text-right mb-3"><a href="#" class="accent-link small-text">Forgot Password?</a></p>
+                <button class="btn-primary w-100 mb-3" onclick="alert('Account created!')">Register Now</button>
+            </div>
+
+            <div class="divider">or continue with</div>
+            <div class="grid-2 mt-3">
+                <button class="btn-outline w-100">Apple</button>
+                <button class="btn-outline w-100">Google</button>
+            </div>
+        </section>
+
+        <!-- Table of Contents -->
+        <div id="tools" class="toc mb-4 mt-4">
+            <h3>Clinical Tools: On this page</h3>
+            <div class="toc-links">
+                <a href="#tool-interactions">Drug Interactions</a>
+                <a href="#tool-pillid">Pill Identifier</a>
+                <a href="#tool-pediatric">Pediatric Dosing</a>
+                <a href="#tool-database">AI Drug Database</a>
+                <a href="#tool-polypharmacy">Polypharmacy Audit</a>
+                <a href="#tool-translator">Rx Label Translator</a>
+                <a href="#tool-sideeffect">Side Effect Check</a>
+                <a href="#tool-fitness">AI Fitness Checker</a>
+            </div>
+        </div>
+
+        <div class="tools-layout">
+            <!-- Tool 1: Interactions -->
+            <section id="tool-interactions" class="tool-card">
+                <h2>Drug Interaction Checker</h2>
+                <p class="description">Check interactions between prescription drugs and OTC medications. Type at least
+                    2 letters and pick a medication from the dropdown.</p>
+                <div class="stats">7,532 interactions checked</div>
+                <p class="sources">Sources: FDA labeling · DailyMed · other clinical guidelines</p>
+
+                <div class="form-group">
+                    <input type="text" placeholder="Medication" class="form-input">
+                    <span class="check-icon">✓</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Medication" class="form-input">
+                    <span class="check-icon">✓</span>
+                </div>
+                <button class="btn-text accent-link">+ Add another medication</button>
+
+                <div class="supplements-section mt-4">
+                    <h3>Supplements & herbs (often missed but interact with many drugs)</h3>
+                    <p class="small-text">Tap any you take regularly. These can interact with prescriptions in ways
+                        patients don't expect.</p>
+                    <div class="chips-container" id="supplementsList">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <h3>Drug allergies (optional but recommended)</h3>
+                    <p class="small-text">List any drug allergies separated by commas. We'll cross-check the medications
+                        above for related drug-class concerns (e.g., penicillin allergy will flag amoxicillin).</p>
+                    <input type="text" placeholder="e.g., Penicillin, Sulfa" class="form-input">
+                </div>
+
+                <div class="disclaimer-box">
+                    Medications must be picked from the dropdown so we can verify them. Supplements are checked by name
+                    only — please double-check spelling on any "other" supplements you add.
+                </div>
+
+                <button class="btn-primary w-100" onclick="alert('Checking interactions...')">Check
+                    Interactions</button>
+                <p class="footer-note">For informational purposes only. Always consult your pharmacist.</p>
+            </section>
+
+            <!-- Tool 2: Pill Identifier -->
+            <section id="tool-pillid" class="tool-card">
+                <h2>Pill Identifier</h2>
+                <p class="description">Describe the pill and we'll show you what matches — then you confirm against the
+                    picture. If it can't be identified safely, we say so.</p>
+                <p class="small-text mb-3">Turn the pill over and read both sides. The markings matter more than the
+                    colour or the shape — they are what tell two identical-looking tablets apart.</p>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Markings on the front</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Markings on the back</label>
+                        <input type="text" class="form-input">
+                    </div>
+                </div>
+                <p class="small-text">Many pills are marked on one side only. A score line — the groove for splitting —
+                    is not a marking.</p>
+
+                <div class="grid-2 mt-3">
+                    <div class="form-group">
+                        <label>Colour</label>
+                        <select class="form-input">
+                            <option>Choose ▾</option>
+                            <option>White</option>
+                            <option>Blue</option>
+                            <option>Red</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Shape</label>
+                        <select class="form-input">
+                            <option>Choose ▾</option>
+                            <option>Round</option>
+                            <option>Oval</option>
+                            <option>Capsule</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="small-text mb-3">Any one of these helps. You don't need all four — but the more you give, the
+                    shorter the list.</p>
+
+                <button class="btn-primary w-100" onclick="alert('Finding pill matches...')">Find matches</button>
+                <div class="warning-box mt-3">
+                    This tool matches markings against FDA labelling data. It is not a substitute for a pharmacist, and
+                    a description cannot rule out a counterfeit. If a pill did not come from a pharmacy, do not take it.
+                    In an emergency call 911, or Poison Control at 1-800-222-1222.
+                </div>
+            </section>
+
+            <!-- Tool 3: Pediatric Dosing -->
+            <section id="tool-pediatric" class="tool-card">
+                <h2>Pediatric Dosing Calculator</h2>
+                <p class="description">Calculate safe medication doses for children based on weight. Uses standard
+                    pediatric dosing guidelines with safety checks for maximum doses.</p>
+
+                <div class="form-group">
+                    <label>Child's Weight</label>
+                    <div class="input-with-addon">
+                        <input type="number" class="form-input" placeholder="0">
+                        <select class="addon-select">
+                            <option>kg</option>
+                            <option>lb</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Child's Age</label>
+                    <div class="grid-2">
+                        <div class="input-with-addon">
+                            <input type="number" class="form-input" placeholder="0">
+                            <span class="addon-text">years</span>
+                        </div>
+                        <div class="input-with-addon">
+                            <input type="number" class="form-input" placeholder="0">
+                            <span class="addon-text">months</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Medication</label>
+                    <select class="form-input">
+                        <option>Select a medication...</option>
+                        <option>Acetaminophen (Tylenol)</option>
+                        <option>Ibuprofen (Advil/Motrin)</option>
+                        <option>Cetirizine (Zyrtec)</option>
+                        <option>Loratadine (Claritin)</option>
+                        <option>Fexofenadine (Allegra)</option>
+                        <option>Diphenhydramine (Benadryl)</option>
+                        <option>Omeprazole (Prilosec OTC)</option>
+                        <option>Famotidine (Pepcid)</option>
+                        <option>Melatonin</option>
+                        <option>Amoxicillin</option>
+                        <option>Amoxicillin/Clavulanate (Augmentin)</option>
+                        <option>Azithromycin (Zithromax)</option>
+                        <option>Cephalexin (Keflex)</option>
+                        <option>Cefdinir (Omnicef)</option>
+                        <option>Trimethoprim/Sulfa (Bactrim)</option>
+                        <option>Penicillin VK</option>
+                        <option>Clindamycin</option>
+                        <option>Prednisolone</option>
+                        <option>Montelukast (Singulair)</option>
+                        <option>Albuterol (inhaler)</option>
+                        <option>Ondansetron (Zofran)</option>
+                        <option>Fluconazole (Diflucan)</option>
+                        <option>Hydroxyzine (Atarax)</option>
+                        <option>Other medication (AI-assisted)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Form</label>
+                    <select class="form-input">
+                        <option>Any / Best for age</option>
+                        <option>Liquid / Oral Suspension</option>
+                        <option>Chewable Tablet</option>
+                        <option>Tablet / Capsule</option>
+                        <option>Suppository</option>
+                        <option>Drops</option>
+                        <option>Inhaler</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Indication (optional)</label>
+                    <input type="text" class="form-input" placeholder="e.g. Fever">
+                </div>
+
+                <button class="btn-primary w-100" onclick="alert('Calculating pediatric dose...')">Calculate
+                    Dose</button>
+                <p class="footer-note">Always verify with your pediatrician or pharmacist before administering.</p>
+            </section>
+
+            <!-- Tool 4: AI Drug Database -->
+            <section id="tool-database" class="tool-card">
+                <h2>AI Drug Database</h2>
+                <p class="description">Search any medication for dosing, side effects, interactions, and warnings.
+                    Powered by AI with clinical data.</p>
+                <div class="search-bar">
+                    <input type="text" class="form-input" placeholder="Search Any Medication">
+                    <button class="btn-primary" onclick="alert('Searching database...')">Search</button>
+                </div>
+                <p class="small-text mt-2">Type a drug name and hit search</p>
+                <p class="footer-note">AI-powered drug information for educational purposes. Always verify with your
+                    pharmacist.</p>
+            </section>
+
+            <!-- Tool 5: Polypharmacy Audit -->
+            <section id="tool-polypharmacy" class="tool-card">
+                <h2>Polypharmacy Audit</h2>
+                <p class="description">Enter all medications for an older adult to check for risky combinations,
+                    duplications, and potentially unnecessary drugs based on Beers Criteria and clinical guidelines.</p>
+                <div class="form-group">
+                    <label>Patient Age</label>
+                    <input type="number" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Conditions (optional)</label>
+                    <input type="text" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Add Medications</label>
+                    <input type="text" class="form-input mb-2" placeholder="Medication name">
+                    <button class="btn-text accent-link">+ Add</button>
+                </div>
+                <button class="btn-primary w-100" onclick="alert('Running polypharmacy audit...')">Run Polypharmacy
+                    Audit</button>
+                <p class="footer-note">Based on AGS Beers Criteria and STOPP/START guidelines. Always review with a
+                    pharmacist or physician before making changes.</p>
+            </section>
+
+            <!-- Tool 6: Rx Label Translator -->
+            <section id="tool-translator" class="tool-card">
+                <h2>Rx Label Translator</h2>
+                <p class="description">Take a photo of your prescription bottle label and we'll translate the
+                    instructions into your language.</p>
+                <div class="form-group">
+                    <label>Your Language</label>
+                    <select class="form-input">
+                        <option>中文 (Chinese)</option>
+                        <option>Español (Spanish)</option>
+                        <option>한국어 (Korean)</option>
+                        <option>Tiếng Việt (Vietnamese)</option>
+                        <option>Tagalog (Filipino)</option>
+                        <option>Français (French)</option>
+                        <option>日本語 (Japanese)</option>
+                        <option>العربية (Arabic)</option>
+                        <option>हिन्दी (Hindi)</option>
+                        <option>Русский (Russian)</option>
+                        <option>Português (Portuguese)</option>
+                    </select>
+                </div>
+
+                <div class="upload-area" onclick="document.getElementById('fileUpload').click()">
+                    <span>📸 Tap to take a photo or upload an image<br>of your prescription bottle label</span>
+                    <input type="file" id="fileUpload" style="display:none">
+                </div>
+
+                <button class="btn-primary w-100 mt-3" onclick="alert('Translating label...')">Translate Label</button>
+                <div class="warning-box mt-3">
+                    AI-powered translation for reference only. For pill identification, please contact your pharmacist
+                    or call Poison Control at 1-800-222-1222. Always confirm medication instructions with your
+                    pharmacist.
+                </div>
+            </section>
+
+            <!-- Tool 7: Side Effect Check -->
+            <section id="tool-sideeffect" class="tool-card">
+                <h2>Side Effect Check</h2>
+                <p class="description">Worried about a symptom you're feeling? Tell us your medication and what's going
+                    on — we'll help you decide if it's something to manage at home, call a pharmacist about, or treat as
+                    a red flag.</p>
+                <div class="form-group">
+                    <label>Medication (optional but helpful)</label>
+                    <input type="text" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>What are you experiencing?</label>
+                    <textarea class="form-input" rows="4" placeholder="Describe your symptoms..."></textarea>
+                </div>
+                <button class="btn-primary w-100 mb-3" onclick="alert('Checking symptoms...')">Check My Symptom</button>
+
+                <div class="warning-box">
+                    Not a substitute for emergency care. If you have severe symptoms like trouble breathing, chest pain,
+                    facial swelling, or thoughts of self-harm, call 911 immediately. This tool is informational only.
+                </div>
+            </section>
+
+            <!-- Tool 8: AI Fitness Checker -->
+            <section id="tool-fitness" class="tool-card">
+                <h2>AI Fitness Checker</h2>
+                <p class="description">Have a fitness related question? Ask our AI fitness expert anything from workout routines and form correction to nutrition and recovery.</p>
+                <div class="form-group">
+                    <label>What is your fitness question?</label>
+                    <textarea class="form-input" rows="4" placeholder="e.g. How can I improve my cardiovascular endurance? or What are the best exercises for lower back pain?"></textarea>
+                </div>
+                <button class="btn-primary w-100 mb-3" onclick="alert('Analyzing fitness question...')">Ask Fitness AI</button>
+                <p class="footer-note">Answers provided by the AI Fitness Checker are for educational purposes. Please consult a doctor or certified fitness professional before starting any new exercise program.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer
+        style="text-align:center; padding: 2rem; color: #555; font-size: 0.9rem; background-color: var(--bg-card); border-top: 1px solid var(--border);">
+        <a href="#" class="accent-link">MEDCARE LLC</a> © 2026. Clinical tools for informational purposes only.
+    </footer>
+
+    <script src="logic.js"></script>
+</body>
+
+</html>
